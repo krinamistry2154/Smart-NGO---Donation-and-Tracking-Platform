@@ -1,0 +1,6 @@
+@NgoDonationApi_HostAddress = http://localhost:5287
+
+GET {{NgoDonationApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
