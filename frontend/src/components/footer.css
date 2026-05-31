@@ -1,0 +1,79 @@
+/* Modern footer styles for NGO Donation System */
+.nds-footer{
+  position:relative;
+  background: linear-gradient(135deg,#0f172a 0%, #0b1220 60%);
+  color: #e6eef8;
+  padding: 40px 16px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+.nds-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left:140px; /* reserve space for left brand */
+}
+.nds-grid{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+}
+.nds-links{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.nds-news{justify-self:end}
+.nds-news{position:absolute;right:16px;top:28px;max-width:420px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.nds-news h4{width:100%;text-align:center;margin:0 0 6px}
+.nds-form{display:flex;gap:10px;align-items:center;justify-content:center;width:100%;max-width:360px}
+.nds-input-wrap{position:relative;flex:1;width:100%}
+.nds-input-wrap input{width:100%;padding:10px 12px 10px 40px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:inherit;outline:none;transition:box-shadow .18s ease}
+
+.nds-brand-outer{position:absolute;left:16px;top:28px;display:flex;gap:12px;align-items:center}
+.nds-brand-outer .nds-logo{width:64px;height:64px;border-radius:50%;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+.nds-brand{display:flex;gap:12px;align-items:center}
+.nds-logo{width:64px;height:64px;object-fit:cover;border-radius:50%;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.nds-title{margin:0;font-size:1.15rem;color:#fff}
+.nds-sub{margin:6px 0 0;color:rgba(230,238,248,0.85);font-size:0.95rem;max-width:320px;line-height:1.4;text-align:justify;text-justify:inter-word;hyphens:auto}
+
+.nds-links h4,.nds-news h4{color:#cfe6ff;margin:0;font-size:1rem}
+.nds-links h4{margin-bottom:8px;text-align:center}
+.nds-links ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 12px;align-items:start;width:100%;max-width:360px;justify-items:center}
+.nds-links li{margin:0}
+.nds-links li a{display:inline-flex;justify-content:center;align-items:center;gap:10px;color:rgba(230,238,248,0.95);text-decoration:none;font-weight:600;position:relative;padding:8px;border-radius:8px}
+.nds-link-icon{width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.85)}
+.nds-links li a:hover .nds-link-icon{transform:translateY(-3px);color:#a8f0ff}
+.nds-links li a:hover{color:#a8f0ff}
+
+/* animated underline */
+.nds-links li a::after{content:"";position:absolute;left:2px;right:2px;bottom:2px;height:3px;background:linear-gradient(90deg,#06b6d4,#3b82f6);border-radius:4px;transform:scaleX(0);transform-origin:left center;transition:transform .22s cubic-bezier(.2,.9,.2,1)}
+.nds-links li a:hover::after{transform:scaleX(1)}
+
+.nds-form{display:flex;gap:10px;align-items:center}
+.nds-input-wrap{position:relative;flex:1}
+.nds-input-wrap input{width:100%;padding:10px 12px 10px 40px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:inherit;outline:none;transition:box-shadow .18s ease}
+.nds-input-wrap input:focus{box-shadow:0 6px 18px rgba(15,55,90,0.25);border-color:rgba(159,224,255,0.35)}
+.nds-mail-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:rgba(255,255,255,0.6)}
+
+.nds-cta{background:linear-gradient(90deg,#06b6d4,#3b82f6);border:none;color:#042034;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(3,102,214,0.18);transition:transform .12s ease,box-shadow .12s ease}
+.nds-cta:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(3,102,214,0.22)}
+
+.nds-socials{margin-top:14px;display:flex;gap:10px}
+.nds-socials .s{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.04);color:inherit;text-decoration:none;transition:transform .12s ease,background .12s ease}
+.nds-socials .s i{font-size:14px}
+.nds-socials .s:hover{transform:translateY(-4px);background:rgba(255,255,255,0.06)}
+
+.nds-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:26px;border-top:1px solid rgba(255,255,255,0.04);padding-top:18px;color:rgba(230,238,248,0.7);font-size:0.92rem}
+.nds-bottom a{color:rgba(159,224,255,0.85);text-decoration:none}
+
+@media (max-width:880px){
+  .nds-grid{grid-template-columns:1fr;}
+  .nds-links{align-items:flex-start}
+  .nds-links h4{text-align:left;margin-bottom:6px}
+  .nds-links ul{grid-template-columns:repeat(2,minmax(0,1fr));justify-items:start}
+  .nds-news{position:static;max-width:none;text-align:left;margin-top:8px;align-items:flex-start}
+  .nds-news h4{width:100%;text-align:left}
+  .nds-bottom{flex-direction:column;gap:10px;align-items:flex-start}
+  .nds-brand-outer{position:static;margin-bottom:8px}
+  .nds-container{padding-left:16px}
+}
+
+/* small tweaks for link focus */
+.nds-links a:focus,.nds-cta:focus,.nds-socials .s:focus{outline:3px solid rgba(159,224,255,0.12);outline-offset:2px}

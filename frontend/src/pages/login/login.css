@@ -1,0 +1,61 @@
+:root{--card-radius:16px}
+.login-page{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background-size:cover;background-position:center}
+.login-wrapper{width:100%;max-width:1000px;border-radius:var(--card-radius);overflow:hidden;display:flex;box-shadow:0 20px 60px rgba(2,6,23,0.6);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));transform:translateY(8px);opacity:0;animation:fadeInUp .6s ease forwards}
+.left-illustration{flex:1.2;padding:36px;color:#fff;display:flex;flex-direction:column;gap:20px;background:linear-gradient(180deg,rgba(39,29,105,0.9),rgba(99,102,241,0.85))}
+.right-form{flex:1;padding:36px;display:flex;align-items:center;justify-content:center}
+.login-illustration{width:260px;height:auto;display:block}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+/* small responsive */
+@media(max-width:880px){.login-wrapper{flex-direction:column}.left-illustration{order:2}.right-form{order:1;padding:24px}.login-illustration{width:200px}}
+
+/* Form improvements */
+.form-field{position:relative;margin-bottom:18px}
+.form-field input.form-control{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:12px 44px 12px 14px;border-radius:10px;box-shadow:none}
+/* transitions + focus glow */
+.form-field input.form-control{transition:box-shadow .18s ease, border-color .18s ease}
+.form-field input.form-control:focus{outline:none;border-color:rgba(167,139,250,0.9);box-shadow:0 6px 18px rgba(99,102,241,0.12), 0 0 18px rgba(99,102,241,0.06)}
+.login-wrapper .form-field input.form-control{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);color:#fff;box-shadow:none;appearance:none}
+.login-wrapper .form-field input.form-control::placeholder{color:transparent}
+
+/* Force higher-specificity rules to override global/bootstrap styles */
+.login-wrapper .right-form .form-field input.form-control,
+.login-wrapper .form-field input.form-control {
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.login-wrapper .form-field label.floating { color: rgba(255,255,255,0.65) !important; }
+.form-field label.floating{position:absolute;left:14px;top:50%;transform:translateY(-50%);transition:all .18s ease;color:rgba(255,255,255,0.65);pointer-events:none}
+.form-field input:focus + label.floating,
+.form-field input:not(:placeholder-shown) + label.floating{top:-8px;left:12px;transform:none;font-size:12px;color:#e6e6ff}
+.form-check-input{width:18px;height:18px}
+/* password toggle (small, fixed at right corner) */
+.password-toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:6px;background:transparent;border:none;display:flex;align-items:center;justify-content:center;color:#fff;opacity:0.9;cursor:pointer;padding:0}
+.password-toggle:hover{background:rgba(255,255,255,0.03)}
+.password-toggle svg{width:16px;height:16px}
+
+/* Hide native browser password reveal icons (Chrome/Edge/IE/Safari) so our toggle is the only one visible */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input[type="password"]::-webkit-textfield-decoration-button,
+input[type="password"]::-webkit-textfield-decoration-container,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+.password-toggle{z-index:2}
+.social-row{display:flex;gap:10px;margin:18px 0}
+.social-btn{flex:1;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px}
+.social-btn{transition:box-shadow .12s ease}
+.social-btn:hover{box-shadow:0 8px 30px rgba(2,6,23,0.45)}
+.social-btn svg{width:18px;height:18px}
+.or-divider{display:flex;align-items:center;gap:12px;margin:12px 0;color:rgba(255,255,255,0.6);font-size:13px}
+.or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.04);border-radius:2px}
+.submit-btn{transition:box-shadow .14s ease}
+.submit-btn:hover{box-shadow:0 14px 40px rgba(37,99,235,0.14)}
+.form-check label{color:rgba(255,255,255,0.85);margin-left:8px}
+.muted-small{color:rgba(255,255,255,0.65);font-size:13px}

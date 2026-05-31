@@ -1,0 +1,372 @@
+[/* Dark theme global overrides to force black/dark backgrounds */]
+html, body, #root {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Make structural elements transparent so the root dark background shows through */
+/* Note: header and hero-specific sections are excluded so page hero images can show */
+section, main, footer, .container, .container-fluid, .row, .col, .page {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Force commonly used Bootstrap light utilities to match dark surfaces */
+.bg-white, .bg-light, .bg-transparent {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+/* Cards and panels should use the dark surface color */
+.card, .card-body, .panel, .panel-body {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Override inline white backgrounds and common light hex codes */
+[style*="background: #fff"],
+[style*="background:#fff"],
+[style*="background: white"],
+[style*="background:white"],
+[style*="background: '#fff'"],
+[style*='background: "#fff"'],
+[style*='background: "white"'] {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+/* Ensure forms and inputs remain visible */
+input, textarea, select {
+  background: #0f1724 !important;
+  color: var(--text) !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* Buttons contrast update for dark background */
+button, .btn {
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+}
+
+/* Strong fallback: force primary structural backgrounds to dark (excluding header/hero) */
+html, body, #root, .container, .container-fluid, section, main, footer, .page {
+  background-color: var(--bg) !important;
+  background-image: none !important;
+  color: var(--text) !important;
+}
+
+:root {
+
+  /* Advanced gradient color palette */
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #06b6d4;
+  --accent: #8b5cf6;
+  --accent-warm: #f59e0b;
+  --accent-cool: #10b981;
+  --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-2: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  --gradient-aurora: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+  --bg: #0f0b1d; /* premium dark background */
+  --surface: #1a1535; /* glass surface */
+  --text: #e8e4f3; /* primary text */
+  --text-light: #f5f3ff; /* light text */
+  --border: rgba(99,102,241,0.15);
+  --shadow: 0 20px 60px rgba(99,102,241,0.2);
+  --shadow-glow: 0 0 30px rgba(99,102,241,0.3);
+  --radius: 16px;
+  --navbar-height: 72px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --sans: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --heading: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --mono: 'Fira Mono', monospace;
+
+  font: 18px/150% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+}
+
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border-inline: none;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: var(--bg);
+  border-radius: 0;
+  box-shadow: none;
+  transition: background var(--transition);
+}
+
+/* Content area offset so fixed navbar doesn't overlap page titles */
+.app-content {
+  padding-top: var(--navbar-height);
+  padding-bottom: 48px;
+}
+
+/* debug styles removed */
+
+/* Keep root without extra padding so footer and other layout stay consistent */
+
+/* Force common light utility classes to use dark surfaces */
+.bg-white, .bg-light {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+.text-dark {
+  color: var(--text) !important;
+}
+
+/* Ensure cards and form surfaces follow dark theme */
+.card, .card * {
+  background: transparent;
+  color: inherit;
+}
+
+.card, .card-body, .card .card-body {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+/* Make containers and sections blend with dark background */
+.container, .container-fluid {
+  color: var(--text) !important;
+}
+
+/* Fix inline white backgrounds often used in examples */
+[style*="background: '#fff'"] , [style*='background: "#fff"'] {
+  background: var(--surface) !important;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: -0.5px;
+  margin: 0.5em 0 0.3em 0;
+  transition: color var(--transition);
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin: 2rem 0 1rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Buttons */
+button, .btn {
+  font-family: var(--sans);
+  font-size: 1rem;
+  padding: 0.7em 2em;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--primary);
+  color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+button:hover, .btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(79,140,255,0.15);
+}
+
+/* Card style */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(79,140,255,0.18);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+
+.slide-up {
+  animation: slideUp 0.8s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: none; }
+}
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+
+/* Strong overrides to ensure navbar/footer and content offset take effect */
+nav.navbar{
+  background: #000 !important;
+  color: #fff !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+.app-content{
+  padding-top: var(--navbar-height) !important;
+}
+
+.footer-section{
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.footer-section a { color: var(--primary) !important; }
+
+/* Force any inline background: #fff or white to be replaced for dark surfaces */
+[style*="background: #fff"]{ background: var(--surface) !important; }
+[style*="background: white"]{ background: var(--surface) !important; }
+}
+
+/* Navbar enhancements */
+.navbar .nav-link {
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.navbar-brand {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+.display-2, .display-4 {
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive container and spacing utilities */
+.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+.container-fluid {
+  padding: 0 20px !important;
+}
+
+section {
+  padding: 60px 0 !important;
+}
+
+/* Mobile responsive breakpoints */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0 !important;
+  }
+  
+  .container {
+    padding: 0 16px !important;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .btn, button {
+    padding: 0.6em 1.5em !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Text styling consistency */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}

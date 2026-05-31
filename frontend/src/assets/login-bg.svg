@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bggrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#071032"/>
+      <stop offset="1" stop-color="#021433"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bggrad)"/>
+  <g opacity="0.06" fill="#fff">
+    <path d="M0 300 C200 200 400 400 600 320 C800 240 1000 420 1200 350 C1400 280 1600 380 1600 380 L1600 900 L0 900 Z"/>
+  </g>
+</svg>

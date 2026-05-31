@@ -1,0 +1,141 @@
+/* Stats Bar - Display on every page */
+.stats-bar {
+  background: linear-gradient(135deg, #0f1724 0%, #1a2844 100%);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 12px 0;
+  position: relative;
+  z-index: 999;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.stat-item:hover {
+  background: rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 1.6rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.stat-icon:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.stat-item:nth-child(3) .stat-icon {
+  animation-delay: 0.2s;
+}
+
+.stat-item:nth-child(5) .stat-icon {
+  animation-delay: 0.4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #10B981;
+  letter-spacing: -0.5px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(16, 185, 129, 0.3), transparent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-container {
+    gap: 20px;
+    padding: 0 12px;
+  }
+
+  .stat-item {
+    padding: 6px 12px;
+  }
+
+  .stat-icon {
+    font-size: 1.3rem;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    padding: 8px 0;
+  }
+
+  .stats-container {
+    gap: 15px;
+    padding: 0 8px;
+  }
+
+  .stat-item {
+    padding: 4px 8px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-icon {
+    font-size: 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+
+  .stat-value {
+    font-size: 0.9rem;
+  }
+}
